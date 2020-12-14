@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+           
+<bean id="mathCtObjectValue" class="spring.loose.coupling.MathCheat"></bean>
+<bean id="scienceCtObjectValue" class="spring.loose.coupling.ScienceCheat"></bean>
+
+<bean id="stu" class="spring.loose.coupling.Student">
+  <property name="cheat" ref="scienceCtObjectValue">
+   <!--   <bean class="spring.dependency.object.MathCheat"></bean>--> 
+  </property>
+</bean>
+
+</beans>

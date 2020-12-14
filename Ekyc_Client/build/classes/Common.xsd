@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://www.demo.com/Common/1.0" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.demo.com/Common/1.0">
+
+    <xs:simpleType name="uid">
+    	<xs:restriction base="xs:string"></xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="ac">
+    	<xs:restriction base="xs:string"></xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="Tid">
+    	<xs:restriction base="xs:string">
+    		<xs:enumeration value="public"></xs:enumeration>
+    		<xs:enumeration value="registered"></xs:enumeration>
+    		<xs:enumeration value="mixed"></xs:enumeration>
+    	</xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="Ver">
+    	<xs:restriction base="xs:string"></xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="Txn">
+    	<xs:restriction base="xs:string"></xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="LicenceKey">
+    	<xs:restriction base="xs:string"></xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="AuaCode">
+    	<xs:restriction base="xs:string"></xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="Meta">
+    	<xs:attribute name="udc">
+    		<xs:simpleType>
+    			<xs:restriction base="xs:string">
+    				<xs:whiteSpace value="collapse"></xs:whiteSpace>
+    			</xs:restriction>
+    		</xs:simpleType>
+    	</xs:attribute>
+    	<xs:attribute name="Pip">
+    		<xs:simpleType>
+    			<xs:restriction base="xs:string">
+    				<xs:whiteSpace value="collapse"></xs:whiteSpace>
+    			</xs:restriction>
+    		</xs:simpleType>
+    	</xs:attribute>
+    	<xs:attribute name="idc">
+    		<xs:simpleType>
+    			<xs:restriction base="xs:string">
+    				<xs:whiteSpace value="collapse"></xs:whiteSpace>
+    			</xs:restriction>
+    		</xs:simpleType>
+    	</xs:attribute>
+    </xs:complexType>
+
+    <xs:simpleType name="YesAndNo">
+    	<xs:restriction base="xs:string">
+    		<xs:enumeration value="Yes"></xs:enumeration>
+    		<xs:enumeration value="No"></xs:enumeration>
+    	</xs:restriction>
+    </xs:simpleType>
+
+
+</xs:schema>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!-- <bean id="airtel" class="spring.IOC.Airtel"></bean> -->
+<!-- <bean id="sim" class="spring.IOC.Vodafone"></bean>  called as IOC using interface object-->  
+ 
+<!-- <bean id="student" class="spring.dependency.injection.Student">
+    <property name="studentName" value="sadashiv"/>--> <!-- called dependency injection using setter method -->
+    <!--  spring is expecting to check the studentName dependency in Student class
+     & it will inject the 
+    value to the using setter method. IOC container whenever is 
+    create the object, its also going the set the value to defined object  
+    if setter method will not present then it will get error saying setter method not present in defined bean-->
+<!-- </bean>-->
+
+<!--<bean id="sadashiv" class="spring.dependency.injection.Student">-->
+   <!-- <constructor-arg name="studentName" value="sadashiv"></constructor-arg>-->
+    <!-- this is called constructor injection before version 3.0 name property was not there
+    spring internally convert into int type suppoes dependency is int type.
+    if you want to type then you can type explicitely
+    if you pass the value is bigger than size its get exception-->
+<!-- </bean> -->
+
+<bean id="mathCtObjectValue" class="spring.dependency.object.MathCheat"></bean>
+
+<bean id="stu" class="spring.dependency.object.Student">
+  <property name="cheat1" ref="mathCtObjectValue">
+   <!--   <bean class="spring.dependency.object.MathCheat"></bean>--> 
+  </property>
+</bean>
+
+<bean id="stuAnother" class="spring.dependency.object.AnotherStudent">
+  <property name="cheat" ref="mathCtObjectValue" >
+    <!--  <bean class="spring.dependency.object.MathCheat"></bean>
+    Instead of creating two different object, we can use ref of existing object using ref property
+    using above methodology, we can create light weight product-->
+    
+  </property>
+</bean>
+
+
+</beans>

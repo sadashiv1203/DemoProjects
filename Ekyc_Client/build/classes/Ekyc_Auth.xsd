@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://www.demo.com/Ekyc_Auth/1.0"
+	elementFormDefault="qualified"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.demo.com/Ekyc_Auth/1.0"
+	xmlns:Common="http://www.demo.com/Common/1.0">
+
+    <xs:import schemaLocation="Common.xsd" namespace="http://www.demo.com/Common/1.0"></xs:import>
+	<xs:element name="Auth" type="tns:Auth"></xs:element>
+
+	<xs:complexType name="Auth">
+		<xs:sequence>
+			<xs:element name="Uses" type="tns:Uses"></xs:element>
+			<xs:element name="Tkn" type="tns:tkn" minOccurs="0"></xs:element>
+			<xs:element name="Meta" type="Common:Meta"></xs:element>
+			<xs:element name="Skey" type="tns:SkeyType"></xs:element>
+			<xs:element name="Data" type="tns:DataType"></xs:element>
+			<xs:element name="Hmac" type="xs:base64Binary"></xs:element>
+		</xs:sequence>
+		<xs:attribute name="tid" type="Common:Tid" use="required"></xs:attribute>
+		<xs:attribute name="ac" type="Common:ac" use="required"></xs:attribute>
+		<xs:attribute name="sa" type="xs:string" use="required"></xs:attribute>
+		<xs:attribute name="ver" type="Common:Ver" use="required"></xs:attribute>
+		<xs:attribute name="txn" type="Common:Txn" use="required"></xs:attribute>
+		<xs:attribute name="lk" type="Common:LicenceKey"
+			use="required">
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="Uses">
+		<xs:attribute name="pi" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="Yes"></xs:enumeration>
+					<xs:enumeration value="No"></xs:enumeration>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="pa" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="Yes"></xs:enumeration>
+					<xs:enumeration value="No"></xs:enumeration>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="pfa" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="Yes"></xs:enumeration>
+					<xs:enumeration value="No"></xs:enumeration>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Bio" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="Yes"></xs:enumeration>
+					<xs:enumeration value="No"></xs:enumeration>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="bt" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="Yes"></xs:enumeration>
+					<xs:enumeration value="No"></xs:enumeration>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Pin" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="Yes"></xs:enumeration>
+					<xs:enumeration value="No"></xs:enumeration>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="otp" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="Yes"></xs:enumeration>
+					<xs:enumeration value="No"></xs:enumeration>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="tkn">
+		<xs:attribute name="type" type="xs:string"></xs:attribute>
+		<xs:attribute name="value" type="xs:string"></xs:attribute>
+	</xs:complexType>
+
+
+	<xs:complexType name="SkeyType">
+		<xs:attribute name="ci" type="xs:string" use="optional"></xs:attribute>
+		<xs:attribute name="ki" type="xs:string" use="optional"></xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="DataType">
+		<xs:simpleContent>
+			<xs:extension base="xs:base64Binary">
+				<xs:attribute name="type" default="X">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="X"></xs:enumeration>
+							<xs:enumeration value="P"></xs:enumeration>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+</xs:schema>

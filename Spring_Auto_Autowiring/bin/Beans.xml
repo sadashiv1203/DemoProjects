@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+           
+   <context:annotation-config> </context:annotation-config>
+  
+<bean  id="humanHeart" class="spring.autowired.Heart">
+   <property name="nameofAnimal" value="Human"></property>
+   <property name="noOfHeart" value="1"></property>
+</bean>  
+
+<bean  id="octopusHeart" class="spring.autowired.Heart">
+   <property name="nameofAnimal" value="Octopus"></property>
+   <property name="noOfHeart" value="3"></property>
+</bean> 
+
+ <!-- <bean  id="heart" class="spring.autowired.Heart"></bean> --> 
+<!-- <bean id="human" class="spring.autowired.Human" autowire="byName"> -->   
+       
+ <!-- <bean  id="heartObject" class="spring.autowired.Heart"></bean> -->      
+ <!-- <bean id="human" class="spring.autowired.Human" autowire="byType"> -->  
+ 
+ <!-- <bean id="human" class="spring.autowired.Human" autowire="constructor"> --> 
+     
+<bean id="human" class="spring.autowired.Human" >
+  <!--  <property name="heart" ref="heart"></property> -->
+</bean>
+
+</beans>

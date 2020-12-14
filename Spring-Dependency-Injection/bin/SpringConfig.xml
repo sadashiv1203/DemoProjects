@@ -1,0 +1,15 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	
+	<bean id="reastauratBean" class="Controller.Restaurant">
+	<!-- Dependency Injection using setter Method + property name=hotDrink then setter method is sethotDrink-->
+	   <property name="hotDrink" ref="teaBean"/>
+	  <!--Dependency Injection Using Constructor <constructor-arg ref="teaBean"/>-->
+	</bean>
+	
+	<bean id="teaBean" class="Controller.Tea">
+	</bean>
+	
+</beans>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+    <display-name>Application Name </display-name>
+    <welcome-file-list>
+        <welcome-file>Main.html</welcome-file>
+    </welcome-file-list>
+    <servlet>
+         <description></description>
+         <display-name>StudentRegistrationServlet</display-name>
+         <servlet-name>StudentRegistrationServlet</servlet-name>
+         <servlet-class>Controller.StudentRegistrationServlet</servlet-class>
+          <init-param>
+                <param-name>Username</param-name>
+                <param-value>System</param-value>
+          </init-param>
+          <init-param>
+                <param-name>Password</param-name>
+                <param-value>Manager</param-value>
+          </init-param>
+    </servlet>
+    <servlet>
+         <description></description>
+         <display-name>CourseRegistrationServlet</display-name>
+         <servlet-name>CourseRegistrationServlet</servlet-name>
+         <servlet-class>Controller.CourseRegistrationServlet</servlet-class>
+             
+          <init-param>
+                <param-name>Username</param-name>
+                <param-value>test</param-value>
+          </init-param>
+          <init-param>
+                <param-name>Password</param-name>
+                <param-value>test</param-value>
+          </init-param>
+    </servlet>
+    <servlet-mapping>
+          <servlet-name>StudentRegistrationServlet</servlet-name>
+          <url-pattern>/stdreg</url-pattern>
+    </servlet-mapping>
+     <servlet-mapping>
+          <servlet-name>CourseRegistrationServlet</servlet-name>
+          <url-pattern>/crsreg</url-pattern>
+     </servlet-mapping>
+     <context-param>
+          <param-name>Driver</param-name>
+          <param-value>Oracle.jdbc.oracledriver</param-value>
+     </context-param>
+     <context-param>
+          <param-name>Url</param-name>
+          <param-value>jdbc:oracle:thin@localhost:1521</param-value>
+     </context-param>
+     <error-page>
+     <exception-type>java.lang.Throwable</exception-type>
+     <location>/error.jsp</location>
+     </error-page>
+     
+</web-app>
